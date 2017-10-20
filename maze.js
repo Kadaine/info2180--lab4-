@@ -1,20 +1,16 @@
 
-let borders;
-let condition = false;
+let border1;
+let condition = false; 
 
 window.onload = function (){
-	borders = document.querySelectorAll('.boundary');
-	for (var i = 0; i < borders.length - 1; i++){
-		borders[i].onmouseover = bordercrossed;
+	border1 = document.getElementById('boundary1');
+	border1.onmouseover = function(){
+		if(!condition){
+			border1.className += " youlose";
+			condition = true;
+		}
 	}
-}
 
-function bordercrossed (){
-	if (!condition){
-		condition = true;
-	borders = document.querySelectorAll('.boundary');
-	for (var i = 0; i < borders.length - 1; i++){
-			borders[i].className += " youlose";
-	    }
-	}	
+
+
 }
